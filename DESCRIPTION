@@ -1,0 +1,15 @@
+Type: Package
+Package: PackageNAME
+Title: A Good Package Title
+Version: 0.0.1
+Authors@R:
+    person("Jumping", "Rivers", , "info@jumpingrivers.com", role = c("aut", "cre"))
+Description: Please add a package description. It does help.
+License: file LICENSE
+Depends: 
+    R (>= 4.0.2)
+Imports:
+    magrittr,
+    rlang
+Encoding: UTF-8
+LazyData: true
