@@ -1,4 +1,4 @@
-# utVisSankey 0.0.1 *2022-08-15*
+# utVizSankey 0.0.1 *2022-08-15*
 
 - Initialise package structure using pm-init
 - Add CODEOWNERS
