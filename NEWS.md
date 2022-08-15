@@ -1,3 +1,7 @@
+# utVizSankey 0.0.3 *2022-08-15*
+
+- Add precommit settings for the project.
+
 # utVizSankey 0.0.2 *2022-08-15*
 
 - Add vignette for demonstrating how to use the package, and how it meets the client requirements.

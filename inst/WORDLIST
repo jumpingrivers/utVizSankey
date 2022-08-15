@@ -15,6 +15,7 @@ knitr
 LazyData
 magrittr
 overriden
+precommit
 rcmd
 repo
 retentions
