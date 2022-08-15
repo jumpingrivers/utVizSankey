@@ -4,11 +4,15 @@ CODEOWNERS
 cre
 csgillespie
 ee
+el
 gitlab
+htmlwidget
 htmlwidgets
+HTMLWidgets
 https
 init
 Initialise
+innerText
 jrkeith
 jumpingrivers
 knitr
@@ -17,6 +21,7 @@ magrittr
 overriden
 precommit
 rcmd
+renderValue
 repo
 retentions
 rlang
@@ -26,8 +31,11 @@ Rmd
 RoxygenNote
 russHyde
 sankey
+src
+stylesheet
 testthat
 theoroe
+uncomment
 utVizSankey
 VignetteBuilder
 visualisations
