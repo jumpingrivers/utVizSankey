@@ -13,3 +13,7 @@ You can install the development version of utVizSankey by running:
 ```r
 remotes::install_gitlab("jumpingrivers/projects/uta/ard/utvizsunburst")
 ```
+
+## Example
+
+Please see the vignettes for an example of how to use utVizSankey.
