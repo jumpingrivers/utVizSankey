@@ -1,3 +1,5 @@
-# {{ package_name }} 0.0.1 *2021-01-01*
+# utVisSankey 0.0.1 *2022-08-15*
 
--   Initial commit
+- Initialise package structure using pm-init
+- Add CODEOWNERS
+- Ensure the bare package passes pm-check / rcmd-check / linting
