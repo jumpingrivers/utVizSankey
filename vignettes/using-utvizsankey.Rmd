@@ -17,3 +17,15 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(utVizSankey)
 ```
+
+## An example dataset
+
+In the utVizSankey package, and example dataset "admissions" is available.
+
+```{r}
+data(admissions, package = "utVizSankey")
+
+head(admissions)
+```
+
+The dataset contains `r ncol(admissions)` variables and `r nrow(admissions)` observations.

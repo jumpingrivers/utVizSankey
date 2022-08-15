@@ -1,0 +1,16 @@
+#' Admissions / retentions dataset
+#'
+#' As used in the 'create-viz.js' script of the JavaScript module "utviz"
+#'
+#' @format   A data frame with 1000 rows and 7 columns:
+#' \describe{
+#'   \item{person_id}{String. Identifier for each individual.}
+#'   \item{student_type}{String. Type of student, e.g., "returning", "continuing", ...}
+#'   \item{ipeds_race_ethn}{String. Ethnicity of student, e.g. "hispanic", "white_non_hispanic",
+#'   ...}
+#'   \item{college}{String. College attended by the student. 2-letter code.}
+#'   \item{gpa}{String. "low", "medium" or "high".}
+#'   \item{club}{Boolean.}
+#'   \item{outcome}{String. "retained", "graduated", "dropped" or "stopped"}
+#' }
+"admissions"

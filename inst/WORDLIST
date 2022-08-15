@@ -6,6 +6,7 @@ csgillespie
 ee
 el
 gitlab
+hispanic
 htmlwidget
 htmlwidgets
 HTMLWidgets
@@ -14,6 +15,7 @@ init
 Initialise
 innerText
 jrkeith
+js
 jumpingrivers
 knitr
 LazyData
@@ -36,6 +38,7 @@ stylesheet
 testthat
 theoroe
 uncomment
+utviz
 utVizSankey
 VignetteBuilder
 visualisations
