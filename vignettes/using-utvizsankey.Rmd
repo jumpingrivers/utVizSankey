@@ -29,3 +29,33 @@ head(admissions)
 ```
 
 The dataset contains `r ncol(admissions)` variables and `r nrow(admissions)` observations.
+
+# A simple sankey chart
+
+The function `sankey()` generates a sankey chart. The two main arguments to this function are:
+
+- `data` (which provides the data-frame for the chart);
+- and `steps` (indicating which columns of that data-frame should be presented in the chart, from
+left-to-right).
+
+```{r}
+sankey(
+  admissions,
+  steps = c("student_type", "gpa", "outcome")
+)
+```
+
+Steps can also be provided as a list containing vectors.
+If a given step is a vector, then each element represents a drill-down stage for that column
+in the Sankey diagram, starting from the first element. For example, a list of
+`list(c("a", "b"), "c", "d")` will create a Sankey with three steps or columns which initially
+shows data corresponding to the properties for the keys "a", "c", and "d" in the data.
+Clicking on any node in the first column will drill-down to show the data for the "b" key,
+filtered on a particular value for the "a" property.
+
+```{r}
+sankey(
+  admissions,
+  steps = list(c("student_type", "college"), "gpa", "outcome")
+)
+```
