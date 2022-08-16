@@ -17,7 +17,7 @@ sankey = function(data, steps, width = NULL, height = NULL, elementId = NULL) {
 
   # forward options using x
   x = list(
-    data = data,
+    data = data[steps],
     steps = steps
   )
 
