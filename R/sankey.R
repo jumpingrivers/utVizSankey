@@ -11,13 +11,14 @@
 #'
 #' @export
 sankey = function(data, steps, width = NULL, height = NULL, elementId = NULL) {
-  if (!all(steps %in% colnames(data)) || any(duplicated(steps))) {
+  used_steps = unlist(steps)
+  if (!all(used_steps %in% colnames(data)) || any(duplicated(used_steps))) {
     stop("steps should be unique and be a subset of colnames(data)")
   }
 
   # forward options using x
   x = list(
-    data = data[steps],
+    data = data[used_steps],
     steps = steps
   )
 
