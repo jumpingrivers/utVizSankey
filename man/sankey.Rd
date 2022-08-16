@@ -4,10 +4,13 @@
 \alias{sankey}
 \title{Create a Sankey plot}
 \usage{
-sankey(message, width = NULL, height = NULL, elementId = NULL)
+sankey(data, steps, width = NULL, height = NULL, elementId = NULL)
 }
 \arguments{
-\item{message}{Placeholder.}
+\item{data}{Data-frame containing one row per observation (student).}
+
+\item{steps}{Character vector containing a subset of the column names in `data`. These correspond
+to the stages of the sankey chart.}
 
 \item{width, height}{The initial size of the visualization}
 

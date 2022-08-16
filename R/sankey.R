@@ -2,17 +2,27 @@
 #'
 #' Create a HTML sankey plot for displaying admissions and retention data
 #'
-#' @param   message   Placeholder.
-#' @param   width,height   The initial size of the visualization
-#' @param   elementId   Identifier for the HTML element into which the visualization will be added.
+#' @param data Data-frame containing one row per observation (student).
+#' @param steps Character vector containing a subset of the column names in `data`. These correspond
+#'   to the stages of the sankey chart.
+#' @param width,height   The initial size of the visualization
+#' @param elementId   Identifier for the HTML element into which the visualization will be added.
 #' @return A html widget containing a Sankey diagram of the data
 #'
 #' @export
-sankey = function(message, width = NULL, height = NULL, elementId = NULL) {
+sankey = function(data, steps, width = NULL, height = NULL, elementId = NULL) {
+  if (!all(steps %in% colnames(data)) || any(duplicated(steps))) {
+    stop("steps should be unique and be a subset of colnames(data)")
+  }
+
   # forward options using x
   x = list(
-    message = message
+    data = data,
+    steps = steps
   )
+
+  # Ensures that javascript receives a row-oriented view of 'data'
+  attr(x, "TOJSON_ARGS") = list(dataframe = "rows") # nolint: object_name_linter.
 
   # create widget
   htmlwidgets::createWidget(
