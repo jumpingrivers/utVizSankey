@@ -1,3 +1,10 @@
+# utVizSankey 0.1.0 *2022-08-16*
+
+- Add methods to create a simple sankey diagram.
+- Add examples to vignette and function documentation to demonstrate how a simple sankey diagram can
+be created.
+- Adds more tests for the `sankey` function.
+
 # utVizSankey 0.0.6 *2022-08-16*
 
 - Store the JS dependencies of the sankey() widget in the package (handlebars 4.7.7; utviz
