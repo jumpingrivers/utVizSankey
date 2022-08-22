@@ -1,3 +1,7 @@
+# utVizSankey 0.0.4 *2022-08-15*
+
+- Add a sankey htmlwidget skeleton
+
 # utVizSankey 0.0.3 *2022-08-15*
 
 - Add precommit settings for the project.

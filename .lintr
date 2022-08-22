@@ -2,6 +2,8 @@ linters: linters_with_defaults(
     assignment_linter = NULL,
     cyclocomp_linter(complexity_limit = 25),
     line_length_linter(100),
+    object_name_linter(c("snake_case", "camelCase", "symbols")),
+    object_usage_linter = NULL,
     undesirable_operator_linter(
       modify_defaults(
         default_undesirable_operators,
