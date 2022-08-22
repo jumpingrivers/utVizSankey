@@ -1,0 +1,20 @@
+Type: Package
+Package: utVizSankey
+Title: htmlwidgets package for creating sankey plots of retentions and
+    admissions data
+Version: 0.0.1
+Authors@R:
+    person("Jumping", "Rivers", , "info@jumpingrivers.com", role = c("aut", "cre"))
+Description: htmlwidgets package for creating sunburst plots of retentions
+    and admissions data.
+License: file LICENSE
+Depends: 
+    R (>= 4.1.0)
+Imports:
+    magrittr,
+    rlang
+Suggests:
+    testthat (>= 3.0.0)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.2.1

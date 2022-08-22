@@ -1,0 +1,18 @@
+# Values should be 0, unless reasons given
+variables:
+  ALLOWED_WARNINGS: 0
+  ALLOWED_NOTES: 0
+  NO_IMPORTS: 0
+  #disable_verify_r_package: "false"
+  #DRAT_PUBLISH: "true"
+
+# This will include the project template main.yml
+include:
+  - project: jumpingrivers/products/rdev/r-package
+    ref: $JR_CI_TEMPLATES_DEFAULT_BRANCH
+    file: /.ci/main.yml
+    rules:
+      - if: $CI_PROJECT_PATH != "jumpingrivers/products/rdev/r-package"
+  - local: /.ci/main.yml
+    rules:
+      - if: $CI_PROJECT_PATH == "jumpingrivers/products/rdev/r-package"
