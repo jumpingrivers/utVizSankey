@@ -1,3 +1,7 @@
+# utVizSankey 0.0.5 *2022-08-15*
+
+- Add an example "admissions" dataset to the package, for use in example code in the vignette.
+
 # utVizSankey 0.0.4 *2022-08-15*
 
 - Add a sankey htmlwidget skeleton
