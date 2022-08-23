@@ -1,3 +1,7 @@
+# utVizSankey 0.1.1 *2022-08-23*
+
+- Use MIT license
+
 # utVizSankey 0.1.0 *2022-08-16*
 
 - Add methods to create a simple sankey diagram.
