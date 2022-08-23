@@ -1,3 +1,9 @@
+# utVizSankey 0.0.6 *2022-08-16*
+
+- Store the JS dependencies of the sankey() widget in the package (handlebars 4.7.7; utviz
+    "#cdc8842")
+- Define the JS dependencies used by sankey() in its .yaml file
+
 # utVizSankey 0.0.5 *2022-08-15*
 
 - Add an example "admissions" dataset to the package, for use in example code in the vignette.

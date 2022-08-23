@@ -8,4 +8,5 @@
 ^\.pre-commit-config\.yaml$
 ^_
 _files$
+dev
 docs

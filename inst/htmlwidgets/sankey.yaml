@@ -1,7 +1,9 @@
-# (uncomment to add a dependency)
-# dependencies:
-#  - name:
-#    version:
-#    src:
-#    script:
-#    stylesheet:
+dependencies:
+  - name: handlebars
+    version: 4.7.7
+    src: htmlwidgets/handlebars
+    script: handlebars.min.js
+  - name: utviz
+    version: 0.0.1
+    src: htmlwidgets/utviz
+    script: utviz.min.js
