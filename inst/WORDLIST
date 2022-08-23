@@ -4,16 +4,13 @@ CODEOWNERS
 cre
 csgillespie
 ee
-el
 gitlab
 hispanic
 htmlwidget
 htmlwidgets
-HTMLWidgets
 https
 init
 Initialise
-innerText
 jrkeith
 js
 jumpingrivers
@@ -23,7 +20,6 @@ magrittr
 overriden
 precommit
 rcmd
-renderValue
 repo
 retentions
 rlang
@@ -33,11 +29,8 @@ Rmd
 RoxygenNote
 russHyde
 sankey
-src
-stylesheet
 testthat
 theoroe
-uncomment
 utviz
 utVizSankey
 VignetteBuilder
