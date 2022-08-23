@@ -12,8 +12,11 @@ HTMLWidgets.widget({
 
       renderValue: function(x) {
 
-        // TODO: code to render the widget, e.g.
-        el.innerText = x.message;
+        const sankey = utviz
+          .createSankey(x.data, x.steps)
+          .render();
+
+        el.appendChild(sankey.viz);
 
       },
 

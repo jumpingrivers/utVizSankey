@@ -4,10 +4,15 @@
 \alias{sankey}
 \title{Create a Sankey plot}
 \usage{
-sankey(message, width = NULL, height = NULL, elementId = NULL)
+sankey(data, steps, width = NULL, height = NULL, elementId = NULL)
 }
 \arguments{
-\item{message}{Placeholder.}
+\item{data}{Data-frame containing one row per observation (student).}
+
+\item{steps}{Character vector or list containing a subset of the column names in `data`.
+These correspond to the stages of the sankey chart. Where a list is provided, elements of the
+list can contain vectors which specify how a step will be further subdivided (drilled-down into)
+when that step is clicked on.}
 
 \item{width, height}{The initial size of the visualization}
 
@@ -18,4 +23,18 @@ A html widget containing a Sankey diagram of the data
 }
 \description{
 Create a HTML sankey plot for displaying admissions and retention data
+}
+\examples{
+data(admissions)
+sankey(
+  admissions,
+  steps = c("student_type", "gpa", "outcome")
+)
+
+# steps can be a list containing vectors.
+sankey(
+  admissions,
+  steps = list(c("student_type", "college"), "gpa", "outcome")
+)
+
 }
