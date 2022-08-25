@@ -2,6 +2,7 @@
 ^.*\.Rproj$
 ^CODEOWNERS$
 ^CONTRIBUTING\.md$
+^LICENSE\.md$
 ^\.Rproj\.user$
 ^\.gitlab-ci\.yml$
 ^\.lintr$

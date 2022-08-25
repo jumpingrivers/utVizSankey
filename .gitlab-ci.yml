@@ -3,6 +3,8 @@ variables:
   ALLOWED_WARNINGS: 0
   ALLOWED_NOTES: 0
   NO_IMPORTS: 0
+  # Allow the LICENSE.md to differ from the JR proprietary license
+  VALIDATE_ALLOW_ERRORS: 1
   #disable_verify_r_package: "false"
   #DRAT_PUBLISH: "true"
 
