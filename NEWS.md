@@ -1,3 +1,8 @@
+# utVizSankey 0.1.2 *2022-08-30*
+
+-   Use updated version of utviz JS library `#3bb665d` that allows length-1 color palettes in
+    Sunburst charts
+
 # utVizSankey 0.1.1 *2022-08-23*
 
 - Use MIT license
@@ -12,7 +17,7 @@ be created.
 # utVizSankey 0.0.6 *2022-08-16*
 
 - Store the JS dependencies of the sankey() widget in the package (handlebars 4.7.7; utviz
-    "#cdc8842")
+    `#cdc8842`)
 - Define the JS dependencies used by sankey() in its .yaml file
 
 # utVizSankey 0.0.5 *2022-08-15*
