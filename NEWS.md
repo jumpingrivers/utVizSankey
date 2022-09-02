@@ -1,7 +1,11 @@
+# utVizSankey 0.1.3 *2022-09-02*
+
+- Fix: prevent multiple widgets being added to the same HTML element
+
 # utVizSankey 0.1.2 *2022-08-30*
 
--   Use updated version of utviz JS library `#3bb665d` that allows length-1 color palettes in
-    Sunburst charts
+- Use updated version of utviz JS library `#3bb665d` that allows length-1 color palettes in
+  Sunburst charts
 
 # utVizSankey 0.1.1 *2022-08-23*
 

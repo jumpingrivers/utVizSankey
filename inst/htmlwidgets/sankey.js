@@ -6,17 +6,16 @@ HTMLWidgets.widget({
 
   factory: function(el, width, height) {
 
-    // TODO: define shared variables for this instance
+    const sankey = utviz.createSankey();
+    el.appendChild(sankey.viz);
 
     return {
 
       renderValue: function(x) {
 
-        const sankey = utviz
-          .createSankey(x.data, x.steps)
-          .render();
-
-        el.appendChild(sankey.viz);
+        sankey.data(x.data);
+        sankey.steps(x.steps);
+        sankey.render();
 
       },
 
