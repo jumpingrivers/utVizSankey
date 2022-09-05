@@ -59,3 +59,25 @@ sankey(
   steps = list(c("student_type", "college"), "gpa", "outcome")
 )
 ```
+
+## Using {utVizSankey} in a shiny app
+
+Example shiny apps that use `utVizSankey` are stored within the package. The source code can be
+found in `./inst/shiny-examples/<app-name>`. To run these type
+`run_shiny_example(app_name = "the-app")`.
+
+Advanced: Data can be obtained from a node in a Sankey chart by alt-clicking on the node. A shiny
+input-handler `utVizSankey.nodeConverter` is provided that will ensure the data is a data.frame when
+it reaches R. To bind that data.frame to a shiny 'input' variable, you must provide an
+`alt_click_handler` argument to the `sankey()` function. This should be a JavaScript function
+created with `htmlwidgets::JS()` that takes the arguments "event" and "data".
+
+```r
+alt_click_handler = htmlwidgets::JS(r"(function(event, data){
+  Shiny.setInputValue("a_shiny_input_var:utVizSankey.nodeConverter", data.entries)
+})")
+
+sankey(data, steps, alt_click_handler = alt_click_handler)
+```
+
+This binds the data associated with a Sankey node to the shiny variable `input$a_shiny_input_var`.

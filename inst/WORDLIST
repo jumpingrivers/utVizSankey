@@ -12,6 +12,7 @@ htmlwidgets
 https
 init
 Initialise
+inputname
 jrkeith
 js
 jumpingrivers
@@ -20,6 +21,7 @@ LazyData
 magrittr
 overriden
 precommit
+purrr
 rcmd
 repo
 retentions

@@ -4,7 +4,14 @@
 \alias{sankey}
 \title{Create a Sankey plot}
 \usage{
-sankey(data, steps, width = NULL, height = NULL, elementId = NULL)
+sankey(
+  data,
+  steps,
+  alt_click_handler = NULL,
+  width = NULL,
+  height = NULL,
+  elementId = NULL
+)
 }
 \arguments{
 \item{data}{Data-frame containing one row per observation (student).}
@@ -13,6 +20,10 @@ sankey(data, steps, width = NULL, height = NULL, elementId = NULL)
 These correspond to the stages of the sankey chart. Where a list is provided, elements of the
 list can contain vectors which specify how a step will be further subdivided (drilled-down into)
 when that step is clicked on.}
+
+\item{alt_click_handler}{A JavaScript function to be called when the user alt-clicks on a
+node in the Sankey chart. Construct this with \code{htmlwidgets::JS()}. The function should
+have parameters "event" and "data".}
 
 \item{width, height}{The initial size of the visualization}
 

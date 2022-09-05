@@ -15,6 +15,9 @@ HTMLWidgets.widget({
 
         sankey.data(x.data);
         sankey.steps(x.steps);
+        if ("altClickHandler" in x) {
+          sankey.altClickHandler(x.altClickHandler);
+        }
         sankey.render();
 
       },

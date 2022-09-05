@@ -1,3 +1,11 @@
+# utVizSankey 0.2.0 *2022-09-02*
+
+-   New feature: allow shiny users to access Sankey node-data by defining an alt-click handler.
+-   Add a shiny app that demonstrates accessing node-data from JS.
+-   New function `run_shiny_example()` to run the example apps
+-   New Input-Handler for shiny that converts the node-data (an array of JS objects) to a
+    data.frame
+
 # utVizSankey 0.1.3 *2022-09-02*
 
 - Fix: prevent multiple widgets being added to the same HTML element
