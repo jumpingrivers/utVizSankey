@@ -7,6 +7,9 @@
 sankey(
   data,
   steps,
+  color = NULL,
+  hover_color = NULL,
+  color_overrides = NULL,
   alt_click_handler = NULL,
   width = NULL,
   height = NULL,
@@ -18,8 +21,24 @@ sankey(
 
 \item{steps}{Character vector or list containing a subset of the column names in `data`.
 These correspond to the stages of the sankey chart. Where a list is provided, elements of the
-list can contain vectors which specify how a step will be further subdivided (drilled-down into)
-when that step is clicked on.}
+list can contain vectors which specify how a step will be further subdivided (drilled-down
+into) when that step is clicked on.}
+
+\item{color}{Character representing a single color. This color is used to color all nodes
+that don't have an associated color override. Links emanating from these nodes will be a
+translucent version of this color.}
+
+\item{hover_color}{Character representing a single color. This color is used to highlight a
+node on hover. It is also used---in a translucent form---to highlight a link on hover.}
+
+\item{color_overrides}{If supplied, this should be a list of lists. Each of the inner lists
+specifies some form of color override. To have any effect it must have a "color" entry and at
+least one of a "name" entry and a "group" entry. The "name" entry corresponds to the name or
+label of a node while the "group" entry corresponds to the name associated with the column in
+the Sankey. This means the groups are derived from the keys in the supplied data while the
+names are the values associated with these keys. An override assigned to a node through a
+"name" entry trumps an override assigned through a "group" entry. An override assigned through
+a "name" and a "group" entry in the same object will trump both of these.}
 
 \item{alt_click_handler}{A JavaScript function to be called when the user alt-clicks on a
 node in the Sankey chart. Construct this with \code{htmlwidgets::JS()}. The function should

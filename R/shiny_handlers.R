@@ -13,7 +13,3 @@ convert_node_data = function(x, session, inputname) {
   stopifnot("purrr" %in% utils::installed.packages())
   purrr::map_dfr(x, as.data.frame)
 }
-
-.onLoad = function(...) {
-  shiny::registerInputHandler("utVizSankey.nodeConverter", convert_node_data)
-}

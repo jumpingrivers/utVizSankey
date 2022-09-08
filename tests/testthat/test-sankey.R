@@ -49,4 +49,33 @@ describe("The sankey object", {
       sankey(data = test_data$data, steps = rep(test_data$steps[1], 2))
     )
   })
+
+  it("converts colors to hex", {
+    sk = sankey(test_data$data, test_data$steps, color = "black")
+
+    expect_equal(sk$x$color, "#000000")
+  })
+
+  it("converts hover_color to hex", {
+    sk = sankey(test_data$data, test_data$steps, hover_color = "hotpink")
+
+    expect_equal(sk$x$hoverColor, "#FF69B4")
+  })
+
+  it("converts color_overrides to hex", {
+    overrides = list(
+      list(name = "retained", color = "black"),
+      list(group = "gpa", color = "hotpink")
+    )
+    expected = list(
+      list(name = "retained", color = "#000000"),
+      list(group = "gpa", color = "#FF69B4")
+    )
+    sk = sankey(test_data$data, test_data$steps, color_overrides = overrides)
+
+    expect_equal(
+      sk$x$colorOverrides,
+      expected
+    )
+  })
 })
