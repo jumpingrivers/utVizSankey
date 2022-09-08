@@ -1,3 +1,9 @@
+# utVizSankey 0.3.0 *2022-09-06*
+
+-   User can set `color`, `hover_color` and `color_overrides` for a sankey() chart using either
+    hex, rgb or R's named colors.
+-   Use updated version of utviz JS library `3c8d1e` v1.0.1.
+
 # utVizSankey 0.2.0 *2022-09-02*
 
 -   New feature: allow shiny users to access Sankey node-data by defining an alt-click handler.

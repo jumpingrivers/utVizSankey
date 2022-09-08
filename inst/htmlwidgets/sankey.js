@@ -15,9 +15,20 @@ HTMLWidgets.widget({
 
         sankey.data(x.data);
         sankey.steps(x.steps);
+
         if ("altClickHandler" in x) {
           sankey.altClickHandler(x.altClickHandler);
         }
+        if ("color" in x) {
+          sankey.color(x.color);
+        }
+        if ("hoverColor" in x) {
+          sankey.hoverColor(x.hoverColor);
+        }
+        if ("colorOverrides" in x) {
+          sankey.colorOverrides(x.colorOverrides);
+        }
+
         sankey.render();
 
       },

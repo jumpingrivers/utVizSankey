@@ -7,7 +7,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r, include = FALSE}
+```{r chunk_options, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
@@ -22,7 +22,7 @@ library(utVizSankey)
 
 In the utVizSankey package, and example dataset "admissions" is available.
 
-```{r}
+```{r load_admissions_data}
 data(admissions, package = "utVizSankey")
 
 head(admissions)
@@ -30,7 +30,7 @@ head(admissions)
 
 The dataset contains `r ncol(admissions)` variables and `r nrow(admissions)` observations.
 
-# A simple sankey chart
+## A simple sankey chart
 
 The function `sankey()` generates a sankey chart. The two main arguments to this function are:
 
@@ -38,7 +38,7 @@ The function `sankey()` generates a sankey chart. The two main arguments to this
 - and `steps` (indicating which columns of that data-frame should be presented in the chart, from
 left-to-right).
 
-```{r}
+```{r basic_sankey}
 sankey(
   admissions,
   steps = c("student_type", "gpa", "outcome")
@@ -53,12 +53,66 @@ shows data corresponding to the properties for the keys "a", "c", and "d" in the
 Clicking on any node in the first column will drill-down to show the data for the "b" key,
 filtered on a particular value for the "a" property.
 
-```{r}
+```{r nested_steps}
 sankey(
   admissions,
   steps = list(c("student_type", "college"), "gpa", "outcome")
 )
 ```
+
+## Colors
+
+Colors on the Sankey visualization can be customized by defining the default line colors, the hover
+colors, and a list of color overrides on top of these.
+
+### Setting line and hover colors
+
+Starting simple, we can customize the line color and the hover color when we create the Sankey
+diagram. We specify the colors in any valid format that would be used in R, such as
+
+- An [R color name](https://stat.ethz.ch/R-manual/R-devel/library/grDevices/html/colors.html),
+such as `"black"`, `"magenta"`, or `darkslateblue"`.
+- A hex code representing the color. For example, the R color "hotpink" can be specified as as the
+string `"#FF69B4"`. Letters in the hex code are not case sensitive.
+- An rgb specification. For example, the R color "forestgreen" can be specified as
+`"rgb(34, 139, 34, maxColorValue = 255)"`
+
+For example, if we choose the black and orange from the Okabe-Ito colorblind-safe palette as the
+base and hover colors, this would be a valid method for specifying the colors:
+
+```{r sankey_with_colors}
+sankey(
+  admissions,
+  steps = list(c("student_type", "college"), "gpa", "outcome"),
+  color = "black",
+  hover_color = "#e69f00"
+)
+```
+
+When choosing colors, note that some transparency will be applied to the colors to help with the
+viewing of overlapping lines.
+
+### Color overrides
+
+You can manually override the colors for particular groups or categories within a group by
+performing color overrides. Overrides are provided as a list, where each override is a list
+containing at least a color and a group, and if you want to specify that the color should only be
+applied to one category in that group, you can specify the name of the category.
+
+```{r color_overrides}
+sankey(
+  admissions,
+  steps = list(c("student_type", "college"), "gpa", "outcome"),
+  color_overrides = list(
+    list(color = "#009e73", group = "gpa", name = "high"),
+    list(color = "#cc79a7", group = "student_type")
+  )
+)
+```
+
+Note that when clicking on a student type in the groups on the left, the color override does not
+apply to the subgroup, but a separate color override can be specified on the subgroup if it is
+needed.
 
 ## Using {utVizSankey} in a shiny app
 

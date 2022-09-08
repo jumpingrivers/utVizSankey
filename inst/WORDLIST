@@ -5,8 +5,12 @@ CODEOWNERS
 cre
 csgillespie
 ee
+ForestGreen
+forestgreen
 gitlab
+gplots
 hispanic
+hotpink
 htmlwidget
 htmlwidgets
 https
@@ -19,12 +23,14 @@ jumpingrivers
 knitr
 LazyData
 magrittr
+Okabe
 overriden
 precommit
 purrr
 rcmd
 repo
 retentions
+rgb
 rlang
 rmarkdown
 rmd
