@@ -78,4 +78,24 @@ describe("The sankey object", {
       expected
     )
   })
+
+  it("appends a template for the node popup", {
+    template = "Node {{name}} has {{count}} individuals associated with it."
+    sk = sankey(test_data$data, test_data$steps, node_template = template)
+
+    expect_equal(
+      sk$x$nodePopupTemplate,
+      template
+    )
+  })
+
+  it("appends a template for the link popup", {
+    template = "Link {{sourceName}}-{{targetName}} has {{count}} individuals associated with it."
+    sk = sankey(test_data$data, test_data$steps, link_template = template)
+
+    expect_equal(
+      sk$x$linkPopupTemplate,
+      template
+    )
+  })
 })

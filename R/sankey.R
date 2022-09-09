@@ -20,6 +20,27 @@
 #'   names are the values associated with these keys. An override assigned to a node through a
 #'   "name" entry trumps an override assigned through a "group" entry. An override assigned through
 #'   a "name" and a "group" entry in the same object will trump both of these.
+#' @param   node_template,link_template   Template strings defining the text presented the popups
+#'   that are shown when hovering over a node or a link. These use the
+#'   [Handlebars HTML templating language](https://handlebarsjs.com/). If supplied, these should be
+#'   a single character string. Alongside regular HTML constructs, the templates can reference the
+#'   following properties.
+#'
+#'   For \code{node_template}:
+#'   * \code{ {{name}} } the name of the node.
+#'   * \code{ {{count}} } the count of the node.
+#'   * \code{ {{totalCount}} } the total count for the whole Sankey diagram.
+#'
+#'   For \code{link_template}:
+#'   * \code{ {{sourceName}} } the name of the source node of the link.
+#'   * \code{ {{targetName}} } the name of the target node of the link.
+#'   * \code{ {{count}} } the count of the link.
+#'   * \code{ {{totalCount}} } the total count for the whole Sankey diagram.
+#'   * \code{ {{percentageOfSourceCount}} } the (rounded) percentage value of all counts from the
+#'     source node that go through this link.
+#'   * \code{ {{percentageOfTargetCount}} } the (rounded) percentage value of all counts to the
+#'     target node that go through this link.
+#'
 #' @param   alt_click_handler   A JavaScript function to be called when the user alt-clicks on a
 #'   node in the Sankey chart. Construct this with \code{htmlwidgets::JS()}. The function should
 #'   have parameters "event" and "data".
@@ -45,6 +66,8 @@ sankey = function(data,
                   color = NULL,
                   hover_color = NULL,
                   color_overrides = NULL,
+                  node_template = NULL,
+                  link_template = NULL,
                   alt_click_handler = NULL,
                   width = NULL,
                   height = NULL,
@@ -77,6 +100,12 @@ sankey = function(data,
       },
       color_overrides
     )
+  }
+  if (!is.null(node_template)) {
+    x$nodePopupTemplate = node_template
+  }
+  if (!is.null(link_template)) {
+    x$linkPopupTemplate = link_template
   }
 
   # Ensures that javascript receives a row-oriented view of 'data'

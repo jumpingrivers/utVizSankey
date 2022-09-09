@@ -5,7 +5,6 @@ CODEOWNERS
 cre
 csgillespie
 ee
-ForestGreen
 forestgreen
 gitlab
 gplots
@@ -35,9 +34,11 @@ rlang
 rmarkdown
 rmd
 Rmd
+Roxygen
 RoxygenNote
 russHyde
 sankey
+templating
 testthat
 theoroe
 utviz

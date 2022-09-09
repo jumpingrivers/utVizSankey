@@ -1,16 +1,21 @@
+# utVizSankey 0.3.1 *2022-09-09*
+
+- New feature: User can set `color`, `hover_color` and `color_overrides` for a sankey() chart using
+  either hex, rgb or R's named colors.
+
 # utVizSankey 0.3.0 *2022-09-06*
 
--   User can set `color`, `hover_color` and `color_overrides` for a sankey() chart using either
-    hex, rgb or R's named colors.
--   Use updated version of utviz JS library `3c8d1e` v1.0.1.
+- New feature: user can add template strings to customize the content of node & link popups via
+  the `node_template` and `link_template` arguments for `sankey()`.
+- Use updated version of utviz JS library `3c8d1e` v1.0.1.
 
 # utVizSankey 0.2.0 *2022-09-02*
 
--   New feature: allow shiny users to access Sankey node-data by defining an alt-click handler.
--   Add a shiny app that demonstrates accessing node-data from JS.
--   New function `run_shiny_example()` to run the example apps
--   New Input-Handler for shiny that converts the node-data (an array of JS objects) to a
-    data.frame
+- New feature: allow shiny users to access Sankey node-data by defining an alt-click handler.
+- Add a shiny app that demonstrates accessing node-data from JS.
+- New function `run_shiny_example()` to run the example apps
+- New Input-Handler for shiny that converts the node-data (an array of JS objects) to a
+  data.frame
 
 # utVizSankey 0.1.3 *2022-09-02*
 
@@ -29,13 +34,13 @@
 
 - Add methods to create a simple sankey diagram.
 - Add examples to vignette and function documentation to demonstrate how a simple sankey diagram can
-be created.
+  be created.
 - Adds more tests for the `sankey` function.
 
 # utVizSankey 0.0.6 *2022-08-16*
 
 - Store the JS dependencies of the sankey() widget in the package (handlebars 4.7.7; utviz
-    `#cdc8842`)
+  `#cdc8842`)
 - Define the JS dependencies used by sankey() in its .yaml file
 
 # utVizSankey 0.0.5 *2022-08-15*
