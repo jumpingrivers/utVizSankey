@@ -56,7 +56,45 @@ filtered on a particular value for the "a" property.
 ```{r nested_steps}
 sankey(
   admissions,
-  steps = list(c("student_type", "college"), "gpa", "outcome")
+  steps = list(c("student_type", "college"), "gpa", "outcome"),
+  width = "100%",
+  height = "100%"
+)
+```
+
+## Sankey pop-ups
+
+When the user hovers over either a node or a link in the Sankey visualization, a popup showing
+various information about the nodes / links is displayed.
+
+By default:
+
+- the node popup shows the name of the node and the count of individuals associated with that node;
+- and the link popup shows the source and target of the link, the number of individuals associated
+with that link and the proportion of individuals associated with source and target that pass through
+that link.
+
+The content of these popups can be customized by passing a `node_template` or `link_template`
+argument to the `sankey()` function. These strings use the
+["Handlebars" templating language](https://handlebarsjs.com/).
+Within the template strings, you can reference different properties of the hovered node or link by
+including that property in 'double-braces' (`{{someProperty}}`). The properties that are available
+for nodes and links are documented in the help page for the function. See `? sankey`.
+
+Here we add a template string for the link popup that displays the name of the source and target of
+the link and the number of individuals associated with that link. Node templates are constructed
+similarly.
+
+```{r}
+# Note we use R's raw strings r"(...)" to allow embedding quotes inside the string
+link_template = r"("{{sourceName}}" - "{{targetName}}": {{count}} of the {{totalCount}} students)"
+
+sankey(
+  admissions,
+  steps = list(c("student_type", "college"), "gpa", "outcome"),
+  link_template = link_template,
+  width = "100%",
+  height = "100%"
 )
 ```
 

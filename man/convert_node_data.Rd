@@ -16,7 +16,7 @@ lists.}
 }
 \value{
 A data.frame with as many rows as there are entries in the list \code{x}. The names in
-  each sub-entry of \code{x} define the columns of this data.frame.
+each sub-entry of \code{x} define the columns of this data.frame.
 }
 \description{
 Function for converting the data.entries component of a node on the Sankey visualization to an

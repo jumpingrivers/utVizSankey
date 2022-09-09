@@ -10,6 +10,8 @@ sankey(
   color = NULL,
   hover_color = NULL,
   color_overrides = NULL,
+  node_template = NULL,
+  link_template = NULL,
   alt_click_handler = NULL,
   width = NULL,
   height = NULL,
@@ -19,7 +21,7 @@ sankey(
 \arguments{
 \item{data}{Data-frame containing one row per observation (student).}
 
-\item{steps}{Character vector or list containing a subset of the column names in `data`.
+\item{steps}{Character vector or list containing a subset of the column names in \code{data}.
 These correspond to the stages of the sankey chart. Where a list is provided, elements of the
 list can contain vectors which specify how a step will be further subdivided (drilled-down
 into) when that step is clicked on.}
@@ -39,6 +41,31 @@ the Sankey. This means the groups are derived from the keys in the supplied data
 names are the values associated with these keys. An override assigned to a node through a
 "name" entry trumps an override assigned through a "group" entry. An override assigned through
 a "name" and a "group" entry in the same object will trump both of these.}
+
+\item{node_template, link_template}{Template strings defining the text presented the popups
+that are shown when hovering over a node or a link. These use the
+\href{https://handlebarsjs.com/}{Handlebars HTML templating language}. If supplied, these should be
+a single character string. Alongside regular HTML constructs, the templates can reference the
+following properties.
+
+For \code{node_template}:
+\itemize{
+\item \code{ {{name}} } the name of the node.
+\item \code{ {{count}} } the count of the node.
+\item \code{ {{totalCount}} } the total count for the whole Sankey diagram.
+}
+
+For \code{link_template}:
+\itemize{
+\item \code{ {{sourceName}} } the name of the source node of the link.
+\item \code{ {{targetName}} } the name of the target node of the link.
+\item \code{ {{count}} } the count of the link.
+\item \code{ {{totalCount}} } the total count for the whole Sankey diagram.
+\item \code{ {{percentageOfSourceCount}} } the (rounded) percentage value of all counts from the
+source node that go through this link.
+\item \code{ {{percentageOfTargetCount}} } the (rounded) percentage value of all counts to the
+target node that go through this link.
+}}
 
 \item{alt_click_handler}{A JavaScript function to be called when the user alt-clicks on a
 node in the Sankey chart. Construct this with \code{htmlwidgets::JS()}. The function should
