@@ -78,7 +78,7 @@ sankey = function(data,
   }
 
   x = list(
-    data = data[used_steps],
+    data = data,
     steps = steps
   )
 
