@@ -20,7 +20,7 @@ library(utVizSankey)
 
 ## An example dataset
 
-In the utVizSankey package, and example dataset "admissions" is available.
+In the `utVizSankey` package, an example dataset `admissions` is available.
 
 ```{r load_admissions_data}
 data(admissions, package = "utVizSankey")
@@ -45,6 +45,18 @@ sankey(
 )
 ```
 
+To alter the initial size of the chart, the `height` and `width` arguments to `sankey()` can be
+modified:
+
+```{r sized_sankey}
+sankey(
+  admissions,
+  steps = c("student_type", "gpa", "outcome"),
+  height = "100%",
+  width = "100%"
+)
+```
+
 Steps can also be provided as a list containing vectors.
 If a given step is a vector, then each element represents a drill-down stage for that column
 in the Sankey diagram, starting from the first element. For example, a list of
@@ -64,24 +76,24 @@ sankey(
 
 ## Sankey pop-ups
 
-When the user hovers over either a node or a link in the Sankey visualization, a popup showing
+When the user hovers over either a node or a link in the Sankey visualization, a pop-up showing
 various information about the nodes / links is displayed.
 
 By default:
 
-- the node popup shows the name of the node and the count of individuals associated with that node;
-- and the link popup shows the source and target of the link, the number of individuals associated
+- the node pop-up shows the name of the node and the count of individuals associated with that node;
+- and the link pop-up shows the source and target of the link, the number of individuals associated
 with that link and the proportion of individuals associated with source and target that pass through
 that link.
 
-The content of these popups can be customized by passing a `node_template` or `link_template`
+The content of these pop-ups can be customized by passing a `node_template` or `link_template`
 argument to the `sankey()` function. These strings use the
 ["Handlebars" templating language](https://handlebarsjs.com/).
 Within the template strings, you can reference different properties of the hovered node or link by
 including that property in 'double-braces' (`{{someProperty}}`). The properties that are available
 for nodes and links are documented in the help page for the function. See `? sankey`.
 
-Here we add a template string for the link popup that displays the name of the source and target of
+Here we add a template string for the link pop-up that displays the name of the source and target of
 the link and the number of individuals associated with that link. Node templates are constructed
 similarly.
 
