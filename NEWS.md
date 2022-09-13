@@ -1,3 +1,10 @@
+# utVizSankey 0.3.2 *2022-09-13*
+
+- All columns in the 'data' argument to `sankey(data, steps, ...)` are now included in the data
+  field passed to the htmlwidget.
+- Show how to specify the size of the output widget using `height` / `weight` arguments in the
+  vignette.
+
 # utVizSankey 0.3.1 *2022-09-09*
 
 - New feature: User can set `color`, `hover_color` and `color_overrides` for a sankey() chart using
