@@ -11,7 +11,7 @@ visualisations for displaying retention and admission data.
 You can install the development version of utVizSankey by running:
 
 ```r
-remotes::install_gitlab("jumpingrivers/projects/uta/ard/utvizsankey")
+remotes::install_github("jumpingrivers/utvizsankey")
 ```
 
 ## Example

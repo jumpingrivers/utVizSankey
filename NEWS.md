@@ -1,3 +1,7 @@
+# utVizSankey 0.3.3 *2023-11-09*
+
+- Update installation instructions in README.
+
 # utVizSankey 0.3.2 *2022-09-13*
 
 - All columns in the 'data' argument to `sankey(data, steps, ...)` are now included in the data
