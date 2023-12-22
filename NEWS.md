@@ -1,3 +1,7 @@
+# utVizSankey 0.3.4 *2023-12-22*
+
+- internal: Add note that client has no RSPM access
+
 # utVizSankey 0.3.3 *2023-11-09*
 
 - Update installation instructions in README.
