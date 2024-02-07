@@ -1,5 +1,7 @@
 # utVizSankey
 
+_The client does not access this package via our RSPM_
+
 <!-- badges: start -->
 <!-- badges: end -->
 
